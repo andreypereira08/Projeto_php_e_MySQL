@@ -1,0 +1,84 @@
+html, body {
+  height: 100%;
+  width: 100%;
+ 
+}
+#menu_geral{
+    
+    width: 100%;
+    height: 50px;;
+    background-color: #364c6e;
+    position: relative;
+    z-index:2;
+    /* color: rgba(255, 255, 255, 0.638); */
+}
+.menu{
+    position:relative;
+    top:1px;
+        list-style:none;
+        /*border:1px solid #c0c0c0;*/
+        float:left;
+        font-size: 25px;
+        font-family: arial, helvetica, sans-serif;
+        }
+
+#email-menu:hover{
+    color: #c3c3c7; 
+    text-decoration:none; 
+    padding:5px 10px; 
+    display:block;
+}
+
+.menu li{
+    position:relative;
+    float:left;
+    border-right:1px solid #c0c0c0;
+}
+
+.menu li a /* configura os links dos itens do menu */
+{
+    color: #c3c3c7; 
+    text-decoration:none; 
+    padding:5px 10px; 
+    display:block;
+}
+
+.menu li a:hover /* layout do menu quando o mouse passa em cima de um item */
+{
+    background:rgb(77, 129, 157);
+    color:#fff;
+    box-shadow:0 3px 10px 0 #CCC;
+    /* -webkit-box-shadow:0 3px 10px 0 #ccc; */
+    text-shadow:0px 0px 5px #fff;
+}
+
+.cartoes > div{
+    margin: 0px;
+    width: 12rem;
+}
+
+h1 a:hover{
+    background-color: green;    
+}
+
+
+
+/* para aparecer os links: contas, musicas e artistas quando passar o mouse por administração   */
+#menu-adm{
+    position: relative;
+}
+#submenu-adm{
+    position: absolute;
+    display: none;
+}
+
+#menu-adm:hover #submenu-adm{
+    display: block;
+}  
+
+#menuestranho{
+    color: white;
+  }
+#menuestranho:hover{
+    color: rgba(255, 255, 255, 0.638);
+  }

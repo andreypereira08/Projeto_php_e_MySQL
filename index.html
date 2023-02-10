@@ -1,0 +1,98 @@
+<!-- 
+Front-End Design (pure css)
+Ui Design
+www.cupcom.com.br
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/cadastro.css">
+<script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
+  <title>Tela de Login / Cadastro</title>
+</head>
+<body>
+
+<main>
+  <section class="container">
+    <div class="login">
+
+      <i class="fas fa-sign-in-alt"></i>
+      <strong>Bem Vindo De volta?</strong>
+      <span>Entre com a sua conta</span>
+
+      <form action="intermediario.php" method="post">
+        <fieldset>
+          <div class="form">
+            <div class="form-row">
+              <i class="fas fa-user"></i>
+              <label class="form-label" for="input" >email</label>
+              <input type="text" class="form-text" required name="email" placeholder="Digite o email">
+            </div>
+            <div class="form-row">
+              <i class="fas fa-eye"></i>
+              <label class="form-label" for="input">Senha</label>
+              <input type="password" class="form-text" required name="senha" placeholder="Digite a senha">
+              <input type="hidden" name="cod_usuario">
+            </div>
+              <button type="submit" class="btn btn-login">Entre</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="register">
+      <i class="fas fa-user-circle"></i>
+      <strong>Criar conta!</strong>
+      <form action="intermediario2.php" method="post">
+        <fieldset>
+          <div class="form">
+            <div class="form-row">
+              <i class="fas fa-user"></i>
+              <label class="form-label" for="input" >Nome</label>
+              <input type="text" name="nome1" class="form-text" placeholder="Coloque seu nome">
+            </div>
+
+            <div class="form-row">
+              <i class="fas fa-envelope"></i>
+              <label class="form-label" for="input">E-mail</label>
+              <input type="email" name="email1" class="form-text" placeholder="Seu e-mail">
+            </div>
+
+            <div class="form-row">
+              <label class="form-label" for="input">Data de Nascimento</label>
+              <input type="date" class="form-text" id="data_nasc" name="data_de_nasc1">
+            </div>
+
+            <div class="form-row">
+              <i class="fas fa-lock"></i>
+              <label class="form-label" for="input">Senha</label>
+              <input type="password" name="senha1" class="form-text" placeholder="Sua senha">
+            </div>
+            <div class="form-row button-login">
+              <button type="submit" class="btn btn-login">Criar</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </section>
+</main>
+
+
+
+  
+
+
+
+<div style="margin: 50px 0; display: flex; align-items: center; justify-content: center; width: 100%">
+  
+
+</div>
+
+</body>
+</html>
