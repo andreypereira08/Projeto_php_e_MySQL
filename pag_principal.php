@@ -57,9 +57,7 @@
 
   <div class="container-fluid fh5co-recent-work">
       <?php
-          $admtrueorfalse = $_SESSION['adm'];
           $cod_usu_atual = $_SESSION['cod_usuario'];
-          $quantidade_musica = 8;
           $direcionamento_playlist = "adicionaraplaylist.php";
           include "card_musica.php";
       ?>      

@@ -3,14 +3,8 @@
     $servidor="localhost";
     $usuario="root";
     $senha="";
-    $db="cp2music";
-
-    // $servidor = "sql309.ezyro.com";
-    // $usuario = "ezyro_33212438";
-    // $senha = "fe6hvsc";
-    // $db = "ezyro_33212438_cp2";
+    $db="bdprojeto";
     
-
     $conexao=mysqli_connect($servidor, $usuario, $senha, $db);
 	$_SESSION['conexao'] = $conexao;
     if(!$conexao){

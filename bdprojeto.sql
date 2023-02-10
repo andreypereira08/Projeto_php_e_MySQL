@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: 27-Jan-2023 às 21:48
--- Versão do servidor: 5.7.17
--- PHP Version: 5.6.30
+-- Host: 127.0.0.1:3306
+-- Tempo de geração: 10-Fev-2023 às 18:38
+-- Versão do servidor: 5.7.40
+-- versão do PHP: 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,8 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cp2music`
+-- Banco de dados: `bdprojeto`
 --
+CREATE DATABASE IF NOT EXISTS `bdprojeto` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `bdprojeto`;
 
 -- --------------------------------------------------------
 
@@ -28,12 +29,14 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `artista`
 --
 
-CREATE TABLE `artista` (
+DROP TABLE IF EXISTS `artista`;
+CREATE TABLE IF NOT EXISTS `artista` (
   `nome` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `data_de_nasc` date NOT NULL,
-  `cod_artista` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `cod_artista` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`cod_artista`)
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `artista`
@@ -74,13 +77,15 @@ INSERT INTO `artista` (`nome`, `email`, `data_de_nasc`, `cod_artista`) VALUES
 -- Estrutura da tabela `musica`
 --
 
-CREATE TABLE `musica` (
+DROP TABLE IF EXISTS `musica`;
+CREATE TABLE IF NOT EXISTS `musica` (
   `nome_mus` varchar(100) NOT NULL,
   `genero_mus` varchar(100) NOT NULL,
   `link` varchar(300) NOT NULL,
   `cod_artista` int(11) NOT NULL,
-  `cod_mus` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `cod_mus` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`cod_mus`)
+) ENGINE=MyISAM AUTO_INCREMENT=57 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `musica`
@@ -113,22 +118,7 @@ INSERT INTO `musica` (`nome_mus`, `genero_mus`, `link`, `cod_artista`, `cod_mus`
 ('Donâ€™t Blame Me', 'Pop', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/kRJKB291Z1g\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 24, 38),
 ('Blank Space', 'POP', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/e-ORhEE9VVg\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 24, 39),
 ('Sadomasoquista', 'funk', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/CCBRNtL7Hfs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 30, 40),
-('nome qualquer', 'Diverso', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/EciqSGqvVrg\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 25, 41),
-('nomemusicaramdom', 'randow', 'linkrandowsnm', 16, 42),
-('nomemusicaramdom', 'randow', 'linkrandowsnm', 16, 43),
-('radomomm', 'rasmdad', 'dasdad', 17, 44),
-('dasdsfsad', 'asdasdas', 'fsadfsadasd', 22, 45),
-('sdadasda', 'dasdasda', 'dasdada', 22, 46),
-('sdadasda', 'dasdasda', 'dasdada', 22, 47),
-('sdadasda', 'dasdasda', 'dasdada', 22, 48),
-('sdadasda', 'dasdasda', 'dasdada', 22, 49),
-('sdasdasd', 'dsadsad', 'dasdsadasf', 15, 50),
-('sdasdasd', 'dsadsad', 'dasdsadasf', 15, 51),
-('asdvfbgnhmh', 'dsfghnmj', 'sdfghjklk', 16, 52),
-('asdvfbgnhmh', 'dsfghnmj', 'sdfghjklk', 16, 53),
-('asdvfbgnhmh', 'dsfghnmj', 'sdfghjklk', 16, 54),
-('Gatinha comunista', 'Diverso', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/_1zv-qYkEZU\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 31, 55),
-('Gatinha Comunistaaaaaaa', 'diverso', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/_1zv-qYkEZU\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 31, 56);
+('Gatinha comunista', 'Diverso', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/_1zv-qYkEZU\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 31, 55);
 
 -- --------------------------------------------------------
 
@@ -136,42 +126,27 @@ INSERT INTO `musica` (`nome_mus`, `genero_mus`, `link`, `cod_artista`, `cod_mus`
 -- Estrutura da tabela `mus_usu`
 --
 
-CREATE TABLE `mus_usu` (
-  `id_mus_usu` int(11) NOT NULL,
+DROP TABLE IF EXISTS `mus_usu`;
+CREATE TABLE IF NOT EXISTS `mus_usu` (
+  `id_mus_usu` int(11) NOT NULL AUTO_INCREMENT,
   `cod_mus` int(11) NOT NULL,
-  `cod_usuario` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `cod_usuario` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_mus_usu`),
+  KEY `cod_mus` (`cod_mus`),
+  KEY `cod_usuario` (`cod_usuario`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `mus_usu`
 --
 
 INSERT INTO `mus_usu` (`id_mus_usu`, `cod_mus`, `cod_usuario`) VALUES
-(1, 9, 22),
-(9, 4, 22),
-(3, 10, 23),
-(4, 11, 23),
-(6, 8, 22),
-(7, 18, 22);
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `playlist`
---
-
-CREATE TABLE `playlist` (
-  `nome_playlist` varchar(100) NOT NULL,
-  `cod_playlist` int(11) NOT NULL,
-  `cod_usuario` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `playlist`
---
-
-INSERT INTO `playlist` (`nome_playlist`, `cod_playlist`, `cod_usuario`) VALUES
-('primeira playlist', 1, 27);
+(1, 7, 23),
+(2, 8, 22),
+(3, 9, 22),
+(4, 4, 22),
+(5, 10, 23),
+(6, 11, 23);
 
 -- --------------------------------------------------------
 
@@ -179,14 +154,16 @@ INSERT INTO `playlist` (`nome_playlist`, `cod_playlist`, `cod_usuario`) VALUES
 -- Estrutura da tabela `usuario`
 --
 
-CREATE TABLE `usuario` (
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE IF NOT EXISTS `usuario` (
   `nome` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `data_de_nasc` date NOT NULL,
   `senha` varchar(100) NOT NULL,
   `adm` varchar(3) DEFAULT NULL,
-  `cod_usuario` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `cod_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`cod_usuario`)
+) ENGINE=MyISAM AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `usuario`
@@ -194,95 +171,27 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`nome`, `email`, `data_de_nasc`, `senha`, `adm`, `cod_usuario`) VALUES
 ('normalnome', 'normalemail@gmail.com', '1098-02-03', 'normalsenha', 'sim', 1),
-('LeÃ£o', 'leao@gmail.com', '2200-03-02', 'LeÃ£o', '', 28),
 ('LeÃ£o', 'leao@gmail.com', '2200-03-02', 'LeÃ£o', '', 29),
 ('nome', 'nome@gmail.com', '2004-07-09', 'nome', '', 26),
 ('garhor', 'garhor@gmail.com', '2003-02-01', 'garhor', 'sim', 7),
 ('nome', 'nome@gmail.com', '2004-07-09', 'nome', '', 27),
 ('ola', 'ola@gmail.com', '1111-01-01', 'olasenha', '', 42),
 ('Vector', 'vector@gmail.com', '2003-09-09', 'Vector', 'sim', 24),
-('antonia', 'antonia@gmail.com', '2004-08-09', 'antonia', '', 23),
+('antonia', 'antonia@gmail.com', '2004-08-09', 'antonia', 'sim', 23),
 ('pessoacomum2', 'pessoacomum2@gmail.com', '2993-02-01', 'pessoacomum2', NULL, 15),
 ('a2 boa', 'a2@gmail.com', '1234-12-12', 'a2senha', 'sim', 22),
 ('Jimin', 'jimingostoso123@gmail.com', '2000-07-02', 'jim', '', 30),
-('Malaquias', 'malaquias123@gmail.com', '2003-03-06', '', '', 31),
+('Malaquias', 'malaquias123@gmail.com', '2003-03-06', 'malaquiassenha', '', 31),
 ('Vivi', 'vivilindinha@gmeil.com', '1975-08-02', '12345', '', 32),
-('Francisco', 'fc@cp2.g12.br', '1968-05-05', 'cp2', '', 33),
 ('Francisco', 'fc@cp2.g12.br', '1968-05-05', 'cp2', '', 34),
 ('anna', 'jazzghost@gmail.com', '2022-12-15', 'marianinhaplay', '', 35),
 ('Felipe', 'asd@gmail.com', '2004-11-04', '1234', '', 36),
 ('marcelle', 'marcelle@com', '0000-00-00', 'marcelle', '', 37),
-('marcelle', 'marcelle@com', '0000-00-00', 'marcelle', '', 38),
 ('geovanna ', 'marcelle@com', '2004-04-08', '1234', '', 39),
 ('ANA LUISA', 'GRTRTR@GMAIL.COM', '1982-12-04', '1234', '', 40),
 ('Alessandro', 'alessando.ramos@gmail.com', '2010-03-08', 'Vasco', '', 41),
 ('baris', 'baris@gmail.com', '2003-09-08', 'barissenha', '', 43);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `artista`
---
-ALTER TABLE `artista`
-  ADD PRIMARY KEY (`cod_artista`);
-
---
--- Indexes for table `musica`
---
-ALTER TABLE `musica`
-  ADD PRIMARY KEY (`cod_mus`);
-
---
--- Indexes for table `mus_usu`
---
-ALTER TABLE `mus_usu`
-  ADD PRIMARY KEY (`id_mus_usu`),
-  ADD KEY `cod_usuario` (`cod_usuario`),
-  ADD KEY `cod_mus` (`cod_mus`);
-
---
--- Indexes for table `playlist`
---
-ALTER TABLE `playlist`
-  ADD PRIMARY KEY (`cod_playlist`);
-
---
--- Indexes for table `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`cod_usuario`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `artista`
---
-ALTER TABLE `artista`
-  MODIFY `cod_artista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
---
--- AUTO_INCREMENT for table `musica`
---
-ALTER TABLE `musica`
-  MODIFY `cod_mus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
---
--- AUTO_INCREMENT for table `mus_usu`
---
-ALTER TABLE `mus_usu`
-  MODIFY `id_mus_usu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT for table `playlist`
---
-ALTER TABLE `playlist`
-  MODIFY `cod_playlist` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `cod_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;COMMIT;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
