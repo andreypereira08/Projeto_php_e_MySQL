@@ -49,3 +49,11 @@
 
 - #### TELA FAVORITOS
 ![favoritos](assets/img/favoritos-1.png)
+
+
+## Contato:
+- Nome: Andrey da Silva Pereira
+
+- Email: [andrey08.ap@gmail.com](andrey08.ap@gmail.com)
+
+- Linkedin: [Andrey Pereira](https://www.linkedin.com/in/andrey-pereira-b92a36224/)
