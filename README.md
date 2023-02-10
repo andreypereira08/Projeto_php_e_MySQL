@@ -42,13 +42,13 @@
 ## Imagens do Projeto
 
 - #### TELA DE LOGIN / CADASTRO
-![login](assets/img/login-1.png)
+![login](projeto/assets/img/login-1.png)
 
 - #### TELA INICIAL
-![home](assets/img/home-1.png)
+![home](projeto/assets/img/home-1.png)
 
 - #### TELA FAVORITOS
-![favoritos](assets/img/favoritos-1.png)
+![favoritos](projeto/assets/img/favoritos-1.png)
 
 
 ## Contato:
