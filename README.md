@@ -53,6 +53,8 @@
 
 ## Contato:
  Nome: Andrey da Silva Pereira
-- GitHub: [andreypereira08](https://github.com/andreypereira08/?target="_blank")
+- GitHub: [andreypereira08](https://github.com/andreypereira08)
 - Email: [andrey08.ap@gmail.com](mailto:andrey08.ap@gmail.com)
-- Linkedin: [Andrey Pereira](https://www.linkedin.com/in/andrey-pereira-b92a36224/?target="_blank")
+- Linkedin: [Andrey Pereira](https://www.linkedin.com/in/andrey-pereira-b92a36224/)
+
+
