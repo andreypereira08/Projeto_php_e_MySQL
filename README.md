@@ -54,6 +54,6 @@
 ## Contato:
 - Nome: Andrey da Silva Pereira
 
-- Email: [andrey08.ap@gmail.com](mailto: andrey08.ap@gmail.com)
+- Email: [andrey08.ap@gmail.com](mailto:andrey08.ap@gmail.com)
 
 - Linkedin: [Andrey Pereira](https://www.linkedin.com/in/andrey-pereira-b92a36224/)
