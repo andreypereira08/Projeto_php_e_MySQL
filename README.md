@@ -3,6 +3,8 @@
 
 ## 📋 **Sobre o Projeto** 
 
+- Link do projeto: http://testehospedagem2.ezyro.com/projeto/
+
 - Esse é um projeto para o TCC de *Desenvolvimento de Sistemas.*
 
 - O usuário pode *assistir, favoritar e desfavoritar* conteúdos adicionados pelo administrador.
